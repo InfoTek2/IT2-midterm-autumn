@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+</head>
+<body>
+<script>
+
+    function randomThrowNumber(){
+        //Finner et tilfeldig tall fra og med 0 og til 1
+        let random = Math.random();
+
+        //Gjør tallet om til en verdi mellom 1 og 6
+        return Math.floor(random*6)+1;
+    }
+
+    let yatzy = false, antallKast = 0;
+    while (!yatzy){
+        //Legget til et tall på telleren
+        antallKast++;
+
+        //Totalt antall kast vi må oppnå for å få yatzy
+        //Altså 5 kast med 6 terninger
+        let throwGoal = 6*5;
+
+        //Totalen av alle kastene
+        let kastTotal = 0;
+
+        //Lager 5 tilfeldige tall og legger de til en total
+        kastTotal += randomThrowNumber();
+        kastTotal += randomThrowNumber();
+        kastTotal += randomThrowNumber();
+        kastTotal += randomThrowNumber();
+        kastTotal += randomThrowNumber();
+
+        //Sjekker om målet for totalen stemmer overens med totalen, dersom den gjør det er det yatzy
+        if(throwGoal === kastTotal){
+            yatzy = true;
+        }
+    }
+
+    //Skriver ut antall kast
+    document.write("<br>Antall kast: " + antallKast)
+</script>
+</body>
+</html>

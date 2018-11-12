@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 6</title>
+</head>
+<body>
+<p>Hva er hovedstaden i Burkina Faso?</p>
+<p class="answer">London</p>
+<p class="answer">Juba</p>
+<p class="answer">Ouagadogou</p>
+<p class="answer">Bamako</p>
+
+<script>
+    //Legger til en event listener på dokumentet
+    document.addEventListener("click", (event) => {
+        //Definerer elementet og teksten som ble klikket på
+        let element = event.srcElement;
+        let elementText = element.innerHTML;
+
+        //Sjekker om elementet har answer class
+        //Sjekker om det er et av svar alternativene.
+        if(element.classList.contains("answer")) {
+            if (elementText === "Ouagadogou") {
+                //Har teksten "Ouagadogou", det er riktig
+                element.style.backgroundColor = "green";
+            }
+            else{
+                //Det er feil svar
+                element.style.backgroundColor = "red";
+            }
+        }
+    });
+</script>
+</body>
+</html>

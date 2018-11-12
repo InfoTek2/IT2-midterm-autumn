@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+<p id="tekst">utenfor</p>
+<script>
+    //Henter dom objektet
+    let tekst = document.getElementById("tekst");
+
+    //Attacher en event listener
+    tekst.onmouseover = function () {
+        //Endrer teksten til "over" når musepekeren er over
+        tekst.innerHTML = "over";
+    };
+
+    //Attacher en event listener
+    tekst.onmouseout = function () {
+        //Endrer teksten til "utenfor" når musepekeren går av elementet
+        tekst.innerHTML = "utenfor";
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 4</title>
+</head>
+<body>
+<canvas id="canvas" height = "1000" width="1000"></canvas>
+
+<script>
+
+    //Definerer element objektet
+    let canvas = document.getElementById("canvas");
+
+    //Henter contexten til canvas
+    let ctx = canvas.getContext("2d");
+
+    function kvadrat(x,y,s){
+        //Setter fargen til svart
+        ctx.strokeStyle = "black";
+        ctx.fillStyle = "black";
+
+        //Setter linjebredden til 5
+        ctx.lineWidth = 5;
+
+        //Lager et et kvadrat med de gitte verdiene
+        ctx.fillRect(x,y,s,s);
+        ctx.stroke();
+    }
+
+    //Tester ut funksjonen
+    kvadrat(100,100, 150);
+    kvadrat(10,0, 100);
+    kvadrat(0,0, 50);
+    kvadrat(100,700, 300);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 5</title>
+</head>
+<body>
+<canvas id="canvas" height = "1000" width="1000"></canvas>
+
+<script>
+    //Definerer fargene
+    let farger = ["black", "blue", "yellow", "red", "orange", "cyan", "green", "brown"];
+
+    //Definerer element objektet
+    let canvas = document.getElementById("canvas");
+
+    //Henter contexten til canvas
+    let ctx = canvas.getContext("2d");
+
+    //Setter linjebredden til 5
+    ctx.lineWidth = 5;
+
+    //Måtte tilpasse funksjonen slik at man kunne definere fargen man ønsket.
+    function kvadrat(x,y,s, color){
+        //Setter fargen til den valgte fargen
+        ctx.strokeStyle = color;
+        ctx.fillStyle = color;
+
+        //Lager et et kvadrat med de gitte verdiene
+        ctx.fillRect(x,y,s,s);
+        ctx.stroke();
+    }
+
+    //Definerer størrelsen til kvadratene sine plass
+    let size = 32;
+
+    for(let i = 0; i < 8; i++){
+        //Definerer fargen
+        let farge = farger[i];
+        for(let a = 0; a < 8; a++){
+            //Lager rektanglene
+            kvadrat(i*size, a*size, size/2, farge);
+        }
+    }
+
+</script>
+</body>
+</html>
