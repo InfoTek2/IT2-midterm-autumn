@@ -11,7 +11,7 @@ foreach($files as $file) {
     if(!is_dir($file))
         continue;
 
-    fwrite($filestream, "<a href=\"/" . $file . "\">" . $file . "</a><br/>");
+    fwrite($filestream, "<a href=\"./" . $file . "\">" . $file . "</a><br/>");
 
     $fp = fopen(getcwd() . "/" . $file . "/index.html", "w");
 
@@ -28,7 +28,7 @@ foreach($files as $file) {
         if($subdir_file == "index.html")
             continue;
 
-        $path =  "/" . $file . "/" . $subdir_file;
+        $path =  "./" . $file . "/" . $subdir_file;
         fwrite($fp, '<li><a href="' . $path . '">'. $subdir_file . '</a></li>');
     }
 
