@@ -28,7 +28,7 @@ foreach($files as $file) {
         if($subdir_file == "index.html")
             continue;
 
-        $path =  "./" . $file . "/" . $subdir_file;
+        $path =  "./" . $subdir_file;
         fwrite($fp, '<li><a href="' . $path . '">'. $subdir_file . '</a></li>');
     }
 
