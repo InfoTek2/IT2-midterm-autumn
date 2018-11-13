@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 2</title>
+</head>
+<body>
+    <script>
+        // Funksjon som returner
+        function sum(end) {
+            // Deklarerer variabel for summen som skal returneres med scope i funksjonen
+            let sum = 0;
+
+            // Loop som starter på 1 og går helt opp til tallet definert av `end`
+            for(let i = 1; i <= end; i++) {
+                sum += i;    
+            }
+
+            // Returnerer verdien av variablen `sum`
+            return sum;
+        }
+
+        document.write(sum(5) + '<br>');
+        document.write(sum(10) + '<br>');
+        document.write(sum(50) + '<br>');
+    </script>
+</body>
+</html>

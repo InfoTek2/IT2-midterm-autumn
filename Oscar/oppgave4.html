@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 4</title>
+
+    <!-- Velger å inkludere normalisering av stilen på dokumentet -->
+    <link href="additional/normalize.css" rel="stylesheet">
+</head>
+<body>
+    <canvas id="canvas">
+        
+    </canvas>
+
+    <script>
+        // Funksjon jeg gjerne inkluderer for å gjøre koden enklere lesbar og kortere å skrive
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        // Funksjon for å tegne et kvadrat på de definerte koordinatene til den definerte størrelsen
+        function kvadrat(x, y, s) {
+            let ctx = $('canvas').getContext('2d');
+
+            ctx.fillStyle="#000";
+            ctx.fillRect(x, y, s, s);
+        }
+
+        kvadrat(0, 0, 100);
+
+        kvadrat(110, 0, 50);
+
+        kvadrat(160, 100, 90);
+    </script>
+</body>
+</html>

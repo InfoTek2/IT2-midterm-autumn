@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 6</title>
+
+    <!-- Velger å inkludere normalisering av stilen på dokumentet -->
+    <link href="additional/normalize.css" rel="stylesheet">
+
+    <style>
+    html, body {
+        height: 100%;
+    }
+    
+    body {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "question question" "answer1 answer2" "answer3 answer4";
+        grid-gap: 10px;
+    }
+
+    .question {
+        font-weight: bold;
+        grid-area: question;
+    }
+
+    #answer1 {
+        grid-area: answer1;
+    }
+
+    #answer2 {
+        grid-area: answer2;
+    }
+
+    #answer3 {
+        grid-area: answer3;
+    }
+
+    #answer4 {
+        grid-area: answer4;
+    }
+
+    [id^="answer"] {
+        margin: 10px;
+        border: 2px solid black;
+    }
+
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+</head>
+<body>
+    <p class="question">Hva er hovedstaden i Burkina Faso?</p>
+
+    <p id="answer1">London</p>
+
+    <p id="answer2">Juba</p>
+
+    <p id="answer3">Ouagadogou</p>
+
+    <p id="answer4">Bamako</p>
+
+    <script>
+        // Henter alle elementene (Nodes) fra DOM med id som starter på answer
+        let svar = document.querySelectorAll('[id^="answer"]');
+
+        // Løper over alle Nodene i svar-arrayet
+        svar.forEach(svarAlternativ => {
+            // Legger til funksjonen sjekkSvar på hendelsen onClick
+            svarAlternativ.onclick = sjekkSvar;
+        })
+
+        function sjekkSvar(event) {
+            // Bruker event.target til å hente verdien inne i HTML-elementet som er klikket på og sjekker om det er riktig
+            if(event.target.innerHTML == 'Ouagadogou') {
+                // Setter bakgrunnsfargen til grønn
+                event.target.style.backgroundColor = "green";
+            } else {
+                // Setter bakgrunnsfargen til rød
+                event.target.style.backgroundColor = "red";
+            }
+        }
+    </script>
+</body>
+</html>

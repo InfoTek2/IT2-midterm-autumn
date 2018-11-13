@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 3</title>
+</head>
+<body>
+    <script>
+    let antallKast = 0;
+
+    let kjører = true;
+
+    // while-løkke som kjører så lenge variablen `kjører` er true
+    while(kjører) {
+        let tilfeldigeTall = [];
+
+        for(let i = 0; i < 5; i++) {
+            tilfeldigeTall.push(finnTilfeldigTall(1,6));
+        }
+
+        let antallSeksere = 0;
+
+        // Foreach på arrayet tilfeldigTall
+        tilfeldigeTall.forEach(tall => {
+            // Hvis tallet er 6
+            if(tall == 6)
+                antallSeksere++; // Legg til +1 på antallSeksere-variablen
+        });
+
+        // Legger til +1 på antallKast-variablen
+        antallKast++;
+
+        // Sjekk om alle 
+        if(antallSeksere == 5) {
+            // Avbryter while-løkken
+            kjører = false;
+        }
+    }
+
+    // Funksjon for å finne et tilfeldig tall mellom minimum (inklusiv) og maksimum (inklusiv)
+    function finnTilfeldigTall(min, maks) {
+        return Math.floor(Math.random() * (maks - min + 1)) + min;
+    }
+
+    document.write('Antall kast: ' + antallKast);
+    </script>
+</body>
+</html>

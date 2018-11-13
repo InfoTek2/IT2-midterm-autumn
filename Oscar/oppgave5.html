@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 5</title>
+
+    <!-- Velger å inkludere normalisering av stilen på dokumentet -->
+    <link href="additional/normalize.css" rel="stylesheet">
+</head>
+<body>
+    <canvas id="canvas" width="1920" height="1080"> 
+        
+    </canvas>
+
+    <script>
+        // Funksjon jeg gjerne inkluderer for å gjøre koden enklere lesbar og kortere å skrive
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        // Definerer et array med en rekke fargekoder
+        let colors = [
+            '#d23131',
+            '#fff600',
+            '#2fc914',
+            '#14c9bf',
+            '#1417c9',
+            '#9814c9',
+            '#c9148f',
+            '#c40d23'
+        ]
+
+        // Funksjon for å tegne et kvadrat på de definerte koordinatene til den definerte størrelsen og med den definerte fargen
+        function kvadrat(x, y, s, c) {
+            let ctx = $('canvas').getContext('2d');
+
+            ctx.fillStyle=c;
+            ctx.fillRect(x, y, s, s);
+        }
+
+        // kvadratroten av 64 er 8, derfor har jeg en for-løkke som løper fra 1 til og med 8
+        for(let x = 1; x <= 8; x++) {
+            for(let y = 1; y <= 8; y++) {
+                kvadrat(x * 30, y * 30, 10, colors[x-1]);
+            }
+        }
+    </script>
+</body>
+</html>
